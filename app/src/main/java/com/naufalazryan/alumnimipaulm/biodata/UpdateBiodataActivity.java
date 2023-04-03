@@ -60,15 +60,14 @@ public class UpdateBiodataActivity extends AppCompatActivity implements View.OnC
     RadioButton laki, perempuan, selected;
     RadioGroup rgJK;
     ProgressDialog pd;
-    CircleImageView gambar;
     APIService apiService = RetrofitClient.getClient().create(APIService.class);
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        view();
         setContentView(R.layout.activity_update_biodata);
+        view();
 
     }
 
