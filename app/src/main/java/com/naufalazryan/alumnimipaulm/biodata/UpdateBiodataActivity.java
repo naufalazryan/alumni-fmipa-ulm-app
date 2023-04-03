@@ -67,8 +67,18 @@ public class UpdateBiodataActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //uploadImage();
+        view();
         setContentView(R.layout.activity_update_biodata);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        view();
+    }
+
+    private void view() {
 
         findViewById(R.id.arrow_back).setOnClickListener(this);
         TextView activity = findViewById(R.id.activity);
@@ -159,8 +169,6 @@ public class UpdateBiodataActivity extends AppCompatActivity implements View.OnC
                 });
             }
         });
-
-
     }
 
 

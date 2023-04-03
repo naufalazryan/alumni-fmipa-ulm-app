@@ -26,7 +26,6 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText nim, password;
-    boolean passwordVisible;
     Button btnLogin;
     String Nim, Password;
     SessionManager sessionManager;
@@ -48,6 +47,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
        switch (v.getId()){
@@ -72,9 +72,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     sessionManager = new SessionManager(LoginActivity.this);
                     AlumniModel loginData = response.body().getData();
                     sessionManager.createLoginSession(loginData);
-//                    Log.d("login", sessionManager.getFoto());
 
-                    //Ini untuk pindah
                     Toast.makeText(LoginActivity.this, response.body().getData().getMhsNama(), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);

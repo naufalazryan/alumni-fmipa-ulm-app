@@ -48,7 +48,7 @@ public class BiodataActivity extends AppCompatActivity implements View.OnClickLi
 
     TextView tvNim, tvNama, tvJk, tvAlamat, tvTelp, tvEmail;
     SessionManager sessionManager;
-    ImageView gantiProfil, gambar;
+    ImageView gantiProfil;
     CircleImageView profil;
     String aluNim, nama, jk, alamat, telp, email;
     APIService apiService = RetrofitClient.getClient().create(APIService.class);

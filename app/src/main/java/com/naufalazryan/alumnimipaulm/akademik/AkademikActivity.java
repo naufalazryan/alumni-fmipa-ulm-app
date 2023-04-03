@@ -28,7 +28,16 @@ public class AkademikActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_akademik);
+        view();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        view();
+    }
+
+    private void view() {
         sessionManager = new SessionManager(AkademikActivity.this);
 
 
@@ -60,8 +69,6 @@ public class AkademikActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.arrow_back).setOnClickListener(this);
         TextView activity = findViewById(R.id.activity);
         activity.setText("Akademik");
-
-
     }
 
     @SuppressLint("NonConstantResourceId")
