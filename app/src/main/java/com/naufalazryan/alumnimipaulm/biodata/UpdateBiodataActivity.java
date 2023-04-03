@@ -51,7 +51,6 @@ import retrofit2.Response;
 public class UpdateBiodataActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private static final int PICK_IMAGE = 1;
     SessionManager sessionManager;
     TextView tvMhsNim;
     EditText edMhsNama, edMhsAlamat, edMhsHp, edMhsEmail;
