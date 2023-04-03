@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pekerjaan.UpdatePekerjaanActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:elevation="20dp"
+        android:background="@color/bluePrimary"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="   Pekerjaan"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/bioGambar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:elevation="10dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/profil"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bioGambar">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="@drawable/bg_arch"
+            android:orientation="vertical"
+            android:padding="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tvNamaInstansi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:text="Nama Instansi"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/namaInstansi"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:elevation="4dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_edit_text_2"
+                android:ems="10"
+
+
+                android:hint="Nama Instansi"
+                android:padding="6dp"
+                android:textColor="@color/black"
+                android:textColorHint="#8e8e8e"
+                android:textSize="18sp" />
+
+
+
+
+
+            <TextView
+                android:id="@+id/tvPekerjaan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:text="Pekerjaan"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/namaPekerjaan"
+                    android:layout_width="169dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="25dp"
+                    android:elevation="4dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/bg_edit_text_2"
+                    android:ems="10"
+
+
+                    android:hint="Nama Pekerjaan"
+                    android:padding="6dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#8e8e8e"
+                    android:textSize="18sp" />
+                <Spinner
+                    android:id="@+id/pekerjaanSpinner"
+                    android:entries="@array/pekerjaan"
+                    android:background="@drawable/bg_edit_text_2"
+                    android:elevation="4dp"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="17dp"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvBidang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:text="Bidang"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/bidangSpinner"
+                android:entries="@array/bidang"
+                android:background="@drawable/bg_edit_text_2"
+                android:elevation="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="17dp"
+                android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMulai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:text="Mulai"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/mulai"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_edit_text_2"
+                android:elevation="4dp"
+                android:ems="10"
+
+
+                android:hint="Tahun Masuk"
+                android:inputType="textPersonName"
+                android:padding="6dp"
+                android:textColor="@color/black"
+                android:textColorHint="#8e8e8e"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvPenghasilan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:text="Penghasilan / Bulan"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/penghasilanSpinner"
+                android:entries="@array/penghasilan"
+                android:background="@drawable/bg_edit_text_2"
+                android:elevation="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="17dp"
+                android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNamaAtasan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:text="Nama Atasan"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/namaAtasan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_edit_text_2"
+                android:elevation="4dp"
+                android:ems="10"
+
+
+                android:hint="Nama Atasan"
+                android:padding="6dp"
+                android:textColor="@color/black"
+                android:textColorHint="#8e8e8e"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvHpAtasan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:text="Hp Atasan"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/hpAtasan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_edit_text_2"
+                android:elevation="4dp"
+                android:ems="10"
+
+
+                android:hint="Hp Atasan"
+                android:padding="6dp"
+                android:textColor="@color/black"
+                android:textColorHint="#8e8e8e"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvEmailAtasan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:text="Email Atasan"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/emailAtasan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_edit_text_2"
+                android:elevation="4dp"
+                android:ems="10"
+
+
+                android:hint="Email Atasan"
+                android:padding="6dp"
+                android:textColor="@color/black"
+                android:textColorHint="#8e8e8e"
+                android:textSize="18sp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/login_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                app:cardBackgroundColor="@color/bluePrimaryVariant"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="6dp">
+
+                <Button
+                    android:id="@+id/btnGoUpdatePendidikan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ripple_white"
+                    android:ems="15"
+
+
+                    android:text="Simpan"
+                    android:elevation="4dp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
