@@ -2,9 +2,9 @@ package com.naufalazryan.alumnimipaulm.api;
 
 import com.naufalazryan.alumnimipaulm.Config;
 import com.naufalazryan.alumnimipaulm.ModelResponse.AlumniModelResponse.AlumniResponse;
+import com.naufalazryan.alumnimipaulm.ModelResponse.PekerjaanModelResponse.PekerjaanDataModel;
+import com.naufalazryan.alumnimipaulm.ModelResponse.PekerjaanModelResponse.PekerjaanResponse;
 import com.naufalazryan.alumnimipaulm.ModelResponse.SpinnerModelResponse.DosenResponse;
-
-import java.util.List;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -64,4 +64,10 @@ public interface APIService {
       @Field("dosen_pg1_non_list") String dosenPG1NonList,
       @Field("dosen_pg2_non_list") String dosenPG2NonList
       );
+    @FormUrlEncoded
+    @Headers("key:" + Config.KEY)
+    @POST("pekerjaan/list")
+    Call<PekerjaanResponse> readPekerjaan(
+            @Field("nim") String nim
+    );
 }

@@ -1,25 +1,25 @@
-<resources >
+<resources>
     <string name="app_name">Alumni ULM</string>
 
 
     <string-array name="jenjangPendidikan">
-        <item >PASCASARJANA (S2)</item>
+        <item>PASCASARJANA (S2)</item>
         <item>DOKTOR (S3)</item>
         <item>SMA/SMK/MA/MAN</item>
         <item>SMP</item>
         <item>SD</item>
     </string-array>
     <string-array name="pekerjaan">
-        <item >PNS</item>
+        <item>PNS</item>
         <item>SWASTA</item>
         <item>WIRAUSAHA</item>
     </string-array>
     <string-array name="bidang">
-        <item >KOMPUTER</item>
+        <item>KOMPUTER</item>
         <item>NON KOMPUTER</item>
     </string-array>
     <string-array name="penghasilan">
-        <item >LEBIH KECIL SAMA DENGAN Rp. 500.000</item>
+        <item>LEBIH KECIL SAMA DENGAN Rp. 500.000</item>
         <item>Rp. 500.001 - Rp. 1.000.000</item>
         <item>Rp. 1.000.001 - Rp. 1.500.000</item>
         <item>Rp. 1.500.001 - Rp. 2.000.000</item>

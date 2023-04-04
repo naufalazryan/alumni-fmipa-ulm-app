@@ -227,7 +227,7 @@
                 android:layout_gravity="end|bottom"
                 android:layout_margin="20dp"
                 android:src="@drawable/ic_edit"
-                app:backgroundTint="@color/bluePrimary"
+                app:backgroundTint="@color/bluePrimaryVariant"
                 app:elevation="10dp"
                 app:fabSize="normal"
                 app:tint="@color/white"

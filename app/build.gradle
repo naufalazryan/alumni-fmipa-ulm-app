@@ -6,7 +6,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.naufalazryan.alumnimipaulm"
+        applicationId "com.naufalazryan.alumnifmipaulm"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -72,7 +72,6 @@ dependencies {
     // Json Parsing
     implementation 'com.google.code.gson:gson:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
 
     // Butterknife
     implementation 'com.jakewharton:butterknife:10.2.3'
@@ -81,8 +80,12 @@ dependencies {
     // view pager2
     implementation 'androidx.viewpager2:viewpager2:1.1.0-beta01'
 
+    // Expandable Text View
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+
     // Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-
+    // Youtube
+    implementation files('libs/YoutubeAndroidPlayerApi.jar')
 }

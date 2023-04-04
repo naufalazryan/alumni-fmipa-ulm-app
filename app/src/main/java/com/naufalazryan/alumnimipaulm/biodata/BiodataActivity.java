@@ -10,24 +10,20 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.content.CursorLoader;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.naufalazryan.alumnimipaulm.AboutActivity;
 import com.naufalazryan.alumnimipaulm.MainActivity;
 import com.naufalazryan.alumnimipaulm.ModelResponse.AlumniModelResponse.AlumniResponse;
 import com.naufalazryan.alumnimipaulm.R;
 import com.naufalazryan.alumnimipaulm.SessionManager;
-import com.naufalazryan.alumnimipaulm.akademik.UpdateAkademikActivity;
 import com.naufalazryan.alumnimipaulm.api.APIService;
 import com.naufalazryan.alumnimipaulm.api.RetrofitClient;
 import com.squareup.picasso.Picasso;
@@ -84,6 +80,7 @@ public class BiodataActivity extends AppCompatActivity implements View.OnClickLi
 //        btnUpdate = findViewById(R.id.btnUpdate);
         findViewById(R.id.arrow_back).setOnClickListener(this);
         findViewById(R.id.btnUpdate).setOnClickListener(this);
+        findViewById(R.id.about).setOnClickListener(this);
 
 
 
@@ -208,6 +205,9 @@ public class BiodataActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(new Intent(this, UpdateBiodataActivity.class));
                 overridePendingTransition(R.anim.slide_from_top, android.R.anim.accelerate_decelerate_interpolator);
                 break;
+            case R.id.about:
+                startActivity(new Intent(this, AboutActivity.class));
+                overridePendingTransition(R.anim.slide_from_top, android.R.anim.accelerate_decelerate_interpolator);
         }
     }
 

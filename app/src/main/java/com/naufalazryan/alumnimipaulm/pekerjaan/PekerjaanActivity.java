@@ -1,41 +1,106 @@
 package com.naufalazryan.alumnimipaulm.pekerjaan;
 
-import static com.naufalazryan.alumnimipaulm.Config.IMAGE_URL;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.naufalazryan.alumnimipaulm.AboutActivity;
 import com.naufalazryan.alumnimipaulm.MainActivity;
+import com.naufalazryan.alumnimipaulm.ModelResponse.AlumniModelResponse.AlumniResponse;
+import com.naufalazryan.alumnimipaulm.ModelResponse.PekerjaanModelResponse.PekerjaanDataModel;
+import com.naufalazryan.alumnimipaulm.ModelResponse.PekerjaanModelResponse.PekerjaanResponse;
 import com.naufalazryan.alumnimipaulm.R;
 import com.naufalazryan.alumnimipaulm.SessionManager;
-import com.squareup.picasso.Picasso;
+import com.naufalazryan.alumnimipaulm.api.APIService;
+import com.naufalazryan.alumnimipaulm.api.RetrofitClient;
+import com.naufalazryan.alumnimipaulm.biodata.BiodataActivity;
+import com.naufalazryan.alumnimipaulm.biodata.UpdateBiodataActivity;
 
-import de.hdodenhof.circleimageview.CircleImageView;
+import java.util.List;
 
-public class PekerjaanActivity extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-    ImageView imgBack, imgUpdate;
-    CircleImageView profil;
+public class PekerjaanActivity extends AppCompatActivity implements View.OnClickListener {
+
+    APIService apiService;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
     SessionManager sessionManager;
+    String nim;
+    public static PekerjaanActivity pekerjaanActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pekerjaan);
+        view();
+    }
 
-        sessionManager = new SessionManager(PekerjaanActivity.this);
+    private void view() {
+        sessionManager = new SessionManager(this);
 
-        imgBack = findViewById(R.id.imgBack);
-        imgUpdate = findViewById(R.id.imgUpdate);
-        profil = findViewById(R.id.bioGambar);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(layoutManager);
+        apiService = RetrofitClient.getClient().create(APIService.class);
+        nim = sessionManager.getUserDetail().get(SessionManager.ALU_NIM);
+        pekerjaanActivity = this;
+        refresh();
 
-        imgBack.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MainActivity.class)));
-        imgUpdate.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), UpdatePekerjaanActivity.class)));
+        findViewById(R.id.arrow_back).setOnClickListener(this);
+        //findViewById(R.id.btnUpdate).setOnClickListener(this);
+        findViewById(R.id.about).setOnClickListener(this);
 
-        Picasso.get().load(IMAGE_URL + sessionManager.getFoto()).into(profil);
+        TextView activity = findViewById(R.id.activity);
+        activity.setText("Pekerjaan");
+    }
 
+    private void refresh() {
+
+        Call<PekerjaanResponse> pekerjaan = apiService.readPekerjaan(nim);
+        Log.d("response",nim);
+        pekerjaan.enqueue(new Callback<PekerjaanResponse>() {
+            @Override
+            public void onResponse(Call<PekerjaanResponse> call, Response<PekerjaanResponse> response) {
+                List<PekerjaanDataModel> pekerjaanDataModel = response.body().getData();
+                Log.d("response",pekerjaanDataModel.toString());
+                adapter = new PekerjaanAdapter(pekerjaanDataModel);
+                recyclerView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onFailure(Call<PekerjaanResponse> call, Throwable t) {
+                Log.d("Retrofit Get", t.toString());
+            }
+        });
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.arrow_back:
+                startActivity(new Intent(this, MainActivity.class));
+                overridePendingTransition(R.anim.slide_from_top, android.R.anim.accelerate_decelerate_interpolator);
+                break;
+            case R.id.about:
+                startActivity(new Intent(this, AboutActivity.class));
+                overridePendingTransition(R.anim.slide_from_top, android.R.anim.accelerate_decelerate_interpolator);
+                break;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
+        overridePendingTransition(R.anim.slide_from_top, android.R.anim.accelerate_decelerate_interpolator);
     }
 }

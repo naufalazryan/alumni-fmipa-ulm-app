@@ -1,7 +1,5 @@
 package com.naufalazryan.alumnimipaulm.akademik;
 
-import static com.naufalazryan.alumnimipaulm.Config.IMAGE_URL;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,16 +11,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.naufalazryan.alumnimipaulm.MainActivity;
 import com.naufalazryan.alumnimipaulm.R;
 import com.naufalazryan.alumnimipaulm.SessionManager;
-import com.squareup.picasso.Picasso;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AkademikActivity extends AppCompatActivity implements View.OnClickListener{
 
     TextView tvJudulSkripsi, tvAluDosenPa, tvAluDosenPu, tvAluDosenPp, tvAluDosenPg1, tvAluDosenPg2;
     SessionManager sessionManager;
     String judulSkripsi, aluDosenPa, aluDosenPu, aluDosenPp, aluDosenPg1, aluDosenPg2;
-    CircleImageView gambar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
