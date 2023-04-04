@@ -1,275 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".pendidikan.PendidikanActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:elevation="20dp"
-        android:background="@color/bluePrimary"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:paddingLeft="10dp"
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imgBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/ic_back"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:text="   Pendidikan"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgBack"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ScrollView
-        android:id="@+id/scrollView3"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        tools:listitem="@layout/adapter_pendidikan" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:focusable="true"
+        app:backgroundTint="@color/bluePrimary"
+        app:layout_constraintBottom_toTopOf="@+id/add"
+        app:layout_constraintEnd_toEndOf="@+id/add"
+        app:srcCompat="@drawable/ic_edit"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:focusable="true"
+        app:backgroundTint="@color/bluePrimary"
+        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
+        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton"
+        app:srcCompat="@drawable/ic_input"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:gravity="center"
+        app:backgroundTint="@color/bluePrimaryVariant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+        app:layout_constraintTop_toTopOf="@+id/recyclerView"
+        app:layout_constraintVertical_bias="0.98"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="@color/white" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/bioGambar"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:elevation="10dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/profil" />
-
-            <ImageView
-                android:id="@+id/imgUpdate"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="140dp"
-                android:layout_marginBottom="20dp"
-                android:elevation="11dp"
-                android:src="@drawable/edit" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_marginBottom="3dp"
-                android:text="Jenjang"
-                android:textColor="@color/bluePrimary"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/jenjang"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="32dp"
-                android:background="@drawable/tv_bg_bio"
-
-
-                android:ems="10"
-                android:gravity="center_vertical"
-                android:inputType="textPersonName"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:text="Jenjang"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textSize="17sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="3dp"
-                android:text="Nama PT"
-                android:textColor="@color/bluePrimary"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/namaPT"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="32dp"
-                android:background="@drawable/tv_bg_bio"
-                android:ems="10"
-                android:gravity="center_vertical"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:text="Nama PT"
-
-
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textSize="17sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="3dp"
-                android:text="Jurusan"
-                android:textColor="@color/bluePrimary"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/jurusan"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="32dp"
-                android:background="@drawable/tv_bg_bio"
-                android:ems="10"
-                android:gravity="center_vertical"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:text="Jurusan"
-                android:textColor="@color/black"
-
-
-                android:textColorHint="@color/black"
-                android:textSize="17sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="3dp"
-                android:text="Mulai"
-                android:textColor="@color/bluePrimary"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/mulai"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="32dp"
-                android:background="@drawable/tv_bg_bio"
-                android:ems="10"
-                android:gravity="center_vertical"
-                android:padding="15dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:text="Mulai"
-                android:textColor="@color/black"
-
-
-                android:textColorHint="@color/black"
-                android:textSize="17sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="3dp"
-                android:text="Selesai"
-                android:textColor="@color/bluePrimary"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/selesai"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="32dp"
-                android:background="@drawable/tv_bg_bio"
-                android:ems="10"
-                android:gravity="center_vertical"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:text="Selesai"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-
-
-                android:textSize="17sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="3dp"
-                android:text="Gelar"
-                android:textColor="@color/bluePrimary"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/gelar"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-
-
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="32dp"
-                android:background="@drawable/tv_bg_bio"
-                android:ems="10"
-                android:gravity="center_vertical"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:text="Gelar"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textSize="17sp" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/login_card"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
-                app:cardBackgroundColor="@color/bluePrimaryVariant"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="8dp">
-
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

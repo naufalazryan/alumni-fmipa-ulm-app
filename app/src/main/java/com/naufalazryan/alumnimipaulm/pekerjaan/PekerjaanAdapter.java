@@ -3,7 +3,6 @@ package com.naufalazryan.alumnimipaulm.pekerjaan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.naufalazryan.alumnimipaulm.ModelResponse.PekerjaanModelResponse.PekerjaanDataModel;
 import com.naufalazryan.alumnimipaulm.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PekerjaanAdapter extends RecyclerView.Adapter<PekerjaanAdapter.MyViewHolder> {
@@ -25,7 +23,7 @@ public class PekerjaanAdapter extends RecyclerView.Adapter<PekerjaanAdapter.MyVi
 
     @Override
     public MyViewHolder onCreateViewHolder (ViewGroup parent,int viewType){
-        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_main, parent, false);
+        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_pekerjaan, parent, false);
         MyViewHolder mViewHolder = new MyViewHolder(mView);
         return mViewHolder;
     }

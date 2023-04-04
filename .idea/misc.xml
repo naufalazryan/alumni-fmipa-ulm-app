@@ -35,6 +35,8 @@
         <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout-v23/activity_login.xml" value="0.1984375" />
         <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout-v26/adapter_main.xml" value="0.19739583333333333" />
         <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout/activity_about.xml" value="0.16666666666666666" />
+        <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout/activity_add_pekerjaan.xml" value="0.1628901239846088" />
+        <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout/activity_add_pendidikan.xml" value="0.1628901239846088" />
         <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout/activity_akademik.xml" value="0.16666666666666666" />
         <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout/activity_biodata.xml" value="0.22" />
         <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout/activity_galeri.xml" value="0.1984375" />
@@ -51,6 +53,8 @@
         <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout/activity_update_pendidikan.xml" value="0.18333333333333332" />
         <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout/activity_update_sosial_media.xml" value="0.22" />
         <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout/adapter_main.xml" value="0.16203505771697307" />
+        <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout/adapter_pekerjaan.xml" value="0.1628901239846088" />
+        <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout/adapter_pendidikan.xml" value="0.16203505771697307" />
         <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout/list_view.xml" value="0.16203505771697307" />
         <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout/slide_item_container.xml" value="0.16203505771697307" />
         <entry key="..\:/Project Android Studio/AlumniMIPAULM/app/src/main/res/layout/spinner_list_item.xml" value="0.1984375" />

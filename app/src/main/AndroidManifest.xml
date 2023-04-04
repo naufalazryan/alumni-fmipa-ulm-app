@@ -29,6 +29,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".AddPendidikanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddPekerjaanActivity"
+            android:exported="false" />
+        <activity
             android:name=".AboutActivity"
             android:exported="false" />
         <activity
@@ -40,7 +46,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".galeri.GaleriActivity"
             android:exported="false" />
