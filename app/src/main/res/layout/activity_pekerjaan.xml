@@ -23,39 +23,15 @@
             tools:listitem="@layout/adapter_pekerjaan" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/update"
+        android:id="@+id/btnTambah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        android:elevation="10dp"
-        android:focusable="true"
-        app:backgroundTint="@color/bluePrimary"
-        app:layout_constraintBottom_toTopOf="@+id/add"
-        app:layout_constraintEnd_toEndOf="@+id/add"
-        app:srcCompat="@drawable/ic_edit"
-        app:tint="@color/white" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        android:elevation="10dp"
-        android:focusable="true"
-        app:backgroundTint="@color/bluePrimary"
-        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
-        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton"
-        app:srcCompat="@drawable/ic_input"
-        app:tint="@color/white" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="10dp"
-        android:gravity="center"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_add"
+        app:elevation="10dp"
+        app:fabSize="normal"
+        app:tint="@color/white"
         app:backgroundTint="@color/bluePrimaryVariant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/recyclerView"
         app:layout_constraintVertical_bias="0.98"
-        app:srcCompat="@drawable/ic_add"
-        app:tint="@color/white" />
+        tools:ignore="ContentDescription" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

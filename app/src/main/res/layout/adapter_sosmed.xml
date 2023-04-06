@@ -30,75 +30,38 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tampilInstansi"
+                android:id="@+id/namaSosmed"
                 android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Tampil Instansi"
+                android:text="Nama Sosmed"
                 android:textColor="@color/clearBlack"
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tampilPekerjaan"
+                android:id="@+id/url"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Tampil Pekerjaan"
+                android:text="URL"
                 android:textColor="@color/clearBlack"
                 android:textSize="15sp" />
 
             <TextView
-                android:id="@+id/tampilTahun"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="Tahun Mulai"
-                android:textColor="@color/clearBlack"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/namaAtasan"
+                android:id="@+id/id"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/roboto_medium"
                 android:visibility="gone"
-                android:text="Nama Atasan"
+                android:text="ID"
                 android:textColor="@color/clearBlack"
                 android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/hpAtasan"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/roboto_medium"
-                android:visibility="gone"
-                android:text="Hp Atasan"
-                android:textColor="@color/clearBlack"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/emailAtasan"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/roboto_medium"
-                android:visibility="gone"
-                android:text="Email Atasan"
-                android:textColor="@color/clearBlack"
-                android:textSize="15sp" />
-
-
 
         </LinearLayout>
 

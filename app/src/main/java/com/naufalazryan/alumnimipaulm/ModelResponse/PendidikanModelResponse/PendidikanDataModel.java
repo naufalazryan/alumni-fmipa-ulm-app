@@ -14,7 +14,7 @@ public class PendidikanDataModel {
 	private String pendPndId;
 
 	@SerializedName("pendGelar")
-	private Object pendGelar;
+	private String pendGelar;
 
 	@SerializedName("pendAluNim")
 	private String pendAluNim;
@@ -71,14 +71,6 @@ public class PendidikanDataModel {
 		return pendPndId;
 	}
 
-	public void setPendGelar(Object pendGelar){
-		this.pendGelar = pendGelar;
-	}
-
-	public Object getPendGelar(){
-		return pendGelar;
-	}
-
 	public void setPendAluNim(String pendAluNim){
 		this.pendAluNim = pendAluNim;
 	}
@@ -126,5 +118,13 @@ public class PendidikanDataModel {
 
 	public String getPendPT(){
 		return pendPT;
+	}
+
+	public String getPendGelar() {
+		return pendGelar;
+	}
+
+	public void setPendGelar(String pendGelar) {
+		this.pendGelar = pendGelar;
 	}
 }

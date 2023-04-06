@@ -26,6 +26,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.content.CursorLoader;
 
+import com.naufalazryan.alumnimipaulm.AboutActivity;
 import com.naufalazryan.alumnimipaulm.MainActivity;
 import com.naufalazryan.alumnimipaulm.R;
 import com.naufalazryan.alumnimipaulm.SessionManager;
@@ -180,13 +181,17 @@ public class UpdateBiodataActivity extends AppCompatActivity implements View.OnC
                 builder.setMessage("Yakin ingin kembali");
                 builder.setPositiveButton("Ya", ((dialogInterface, i) -> {
                     startActivity(new Intent(this, BiodataActivity.class));
-                    overridePendingTransition(R.anim.slide_from_bottom, android.R.anim.accelerate_decelerate_interpolator);
+                    overridePendingTransition(R.anim.slide_from_top, android.R.anim.accelerate_decelerate_interpolator);
                 }
                 ));
                 builder.setNegativeButton("Tidak", (dialogInterface, i) -> {
                     dialogInterface.dismiss();
                 });
                 builder.show();
+            case R.id.about:
+                startActivity(new Intent(this, AboutActivity.class));
+                overridePendingTransition(R.anim.slide_from_bottom, android.R.anim.accelerate_decelerate_interpolator);
+                break;
         }
     }
     @Override
@@ -197,7 +202,7 @@ public class UpdateBiodataActivity extends AppCompatActivity implements View.OnC
         builder.setMessage("Yakin ingin kembali");
         builder.setPositiveButton("Ya", ((dialogInterface, i) -> {
             startActivity(new Intent(this, BiodataActivity.class));
-            overridePendingTransition(R.anim.slide_from_bottom, android.R.anim.accelerate_decelerate_interpolator);
+            overridePendingTransition(R.anim.slide_from_top, android.R.anim.accelerate_decelerate_interpolator);
         }
         ));
         builder.setNegativeButton("Tidak", (dialogInterface, i) -> {

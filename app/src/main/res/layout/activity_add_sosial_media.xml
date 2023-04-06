@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#6BD2E1F6"
-    tools:context=".sosmed.UpdateSosialMediaActivity">
+    tools:context=".sosmed.AddSosialMediaActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

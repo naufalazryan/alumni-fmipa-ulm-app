@@ -7,6 +7,8 @@ import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 import com.naufalazryan.alumnimipaulm.ModelResponse.AlumniModelResponse.AlumniModel;
+import com.naufalazryan.alumnimipaulm.ModelResponse.PendidikanModelResponse.PendidikanDataModel;
+
 import java.util.HashMap;
 
 public class SessionManager {
@@ -51,10 +53,16 @@ public class SessionManager {
     public static final String ALU_DSN_PU_NAMA = "aluDsnPuNama";
     public static final String ALU_DSN_PG_1_NAMA = "aluDsnPg1Nama";
     public static final String ALU_DSN_PG_2_NAMA = "aluDsnPg2Nama";
-
-
-
-
+    public static final String PENDIDIKAN_MULAI = "pendMulai";
+    public static final String PENDIDIKAN_SELESAI = "pendSelesai";
+    public static final String PENDIDIKAN_ID = "pndId";
+    public static final String PENDIDIKAN_NAMA = "pndNama";
+    public static final String PENDIDIKAN_URUT = "pndUrut";
+    public static final String PENDIDIKAN_PT = "pendPT";
+    public static final String PENDIDIKAN_ALU_NIM = "pendAluNim";
+    public static final String PENDIDIKAN_GELAR = "pendGelar";
+    public static final String PENDIDIKAN_JURUSAN = "pendJurusan";
+    public static final String PENDIDIKAN_PND_ID = "pendPndId";
     public static final String ALU_FOTO = "aluFoto";
 
 
@@ -87,6 +95,18 @@ public class SessionManager {
         editor.putString(ALU_DSN_PG_1_NAMA, user.getAluDsnPg1Nama());
         editor.putString(ALU_DSN_PG_2_NAMA, user.getAluDsnPg2Nama());
         editor.commit();
+    }
+
+    public void pendidikanSession(PendidikanDataModel pendidikan){
+        editor.putString(PENDIDIKAN_ID, pendidikan.getPendId());
+        editor.putString(PENDIDIKAN_NAMA, pendidikan.getPndNama());
+        editor.putString(PENDIDIKAN_MULAI, pendidikan.getPendMulai());
+        editor.putString(PENDIDIKAN_SELESAI, pendidikan.getPendSelesai());
+        editor.putString(PENDIDIKAN_PT, pendidikan.getPendPT());
+        editor.putString(PENDIDIKAN_GELAR, pendidikan.getPendGelar());
+        editor.putString(PENDIDIKAN_ALU_NIM, pendidikan.getPendAluNim());
+        editor.putString(PENDIDIKAN_URUT, pendidikan.getPndUrut());
+        editor.putString(PENDIDIKAN_PND_ID, pendidikan.getPendPndId());
     }
 
     public void setAluNama(String nama){
@@ -198,6 +218,14 @@ public class SessionManager {
         user.put(ALU_DSN_PP_NAMA, sharedPreferences.getString(ALU_DSN_PP_NAMA, null));
         user.put(ALU_DSN_PG_1_NAMA, sharedPreferences.getString(ALU_DSN_PG_1_NAMA, null));
         user.put(ALU_DSN_PG_2_NAMA, sharedPreferences.getString(ALU_DSN_PG_2_NAMA, null));
+        user.put(PENDIDIKAN_ALU_NIM, sharedPreferences.getString(PENDIDIKAN_ALU_NIM, null));
+        user.put(PENDIDIKAN_GELAR, sharedPreferences.getString(PENDIDIKAN_GELAR, null));
+        user.put(PENDIDIKAN_PT, sharedPreferences.getString(PENDIDIKAN_PT, null));
+        user.put(PENDIDIKAN_ID, sharedPreferences.getString(PENDIDIKAN_ID, null));
+        user.put(PENDIDIKAN_NAMA, sharedPreferences.getString(PENDIDIKAN_NAMA, null));
+        user.put(PENDIDIKAN_MULAI, sharedPreferences.getString(PENDIDIKAN_MULAI, null));
+        user.put(PENDIDIKAN_SELESAI, sharedPreferences.getString(PENDIDIKAN_SELESAI, null));
+        user.put(PENDIDIKAN_JURUSAN, sharedPreferences.getString(PENDIDIKAN_JURUSAN, null));
         return user;
     }
 

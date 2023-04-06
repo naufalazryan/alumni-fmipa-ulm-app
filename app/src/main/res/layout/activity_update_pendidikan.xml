@@ -1,253 +1,306 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6BD2E1F6"
     tools:context=".pendidikan.UpdatePendidikanActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:elevation="20dp"
-        android:background="@color/bluePrimary"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:paddingLeft="6dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imgBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
-            android:src="@drawable/ic_back"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:text="   Pendidikan"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <include
+            android:id="@+id/include"
+            layout="@layout/toolbar"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgBack"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/bioGambar"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:elevation="10dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
-        android:src="@drawable/profil"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
-
-    <ScrollView
-        android:id="@+id/scrollView3"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bioGambar">
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="600dp"
-            android:background="@drawable/bg_arch"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="32dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include">
+
 
             <TextView
                 android:id="@+id/tvJenjang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-
                 android:text="Jenjang"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginBottom="7dp"
+                android:textColor="@color/clearBlack"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
 
-
-            <Spinner
-                android:id="@+id/jenjang"
-                android:entries="@array/jenjangPendidikan"
-                android:background="@drawable/bg_edit_text_2"
-                android:elevation="4dp"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginBottom="17dp"
-                android:spinnerMode="dropdown"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="20dp"
+                android:background="#fff"
+                android:elevation="2dp">
+
+                <Spinner
+                    android:id="@+id/jenjang"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:elevation="3dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </RelativeLayout>
 
 
             <TextView
                 android:id="@+id/tvNamaPT"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-
                 android:text="Nama PT"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginBottom="7dp"
+                android:textColor="@color/clearBlack"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
 
-            <EditText
-                android:id="@+id/whatsapp"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:elevation="4dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_rounded"
+                android:elevation="2dp">
 
-                android:layout_marginBottom="24dp"
-                android:background="@drawable/bg_edit_text_2"
-                android:ems="10"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout2"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:background="@color/white"
+                    app:boxStrokeColor="@color/bluePrimary"
+                    app:endIconMode="clear_text"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="false"
+                    app:prefixTextColor="@color/bluePrimary">
 
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/namaPT"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:maxEms="4"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/bluePrimary">
 
-                android:hint="Nama Perguruan Tinggi"
-                android:padding="6dp"
-                android:textColor="@color/black"
-                android:textColorHint="#8e8e8e"
-                android:textSize="18sp" />
+                    </com.google.android.material.textfield.TextInputEditText>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/tvJurusan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-
                 android:text="Jurusan"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginBottom="7dp"
+                android:textColor="@color/clearBlack"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
 
-            <EditText
-                android:id="@+id/jurusan"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:layout_marginBottom="24dp"
-                android:elevation="4dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_rounded"
+                android:elevation="2dp">
 
-                android:background="@drawable/bg_edit_text_2"
-                android:ems="10"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout3"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:background="@color/white"
+                    app:boxStrokeColor="@color/bluePrimary"
+                    app:endIconMode="clear_text"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="false"
+                    app:prefixTextColor="@color/bluePrimary">
 
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/jurusan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:maxEms="4"
+                        android:textColor="@color/black">
 
-                android:hint="Nama Jurusan"
-                android:padding="6dp"
-                android:textColor="@color/black"
-                android:textColorHint="#8e8e8e"
-                android:textSize="18sp" />
+                    </com.google.android.material.textfield.TextInputEditText>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
 
             <TextView
                 android:id="@+id/tvMulai"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Tahun Masuk"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginBottom="7dp"
+                android:textColor="@color/clearBlack"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
 
-
-                android:text="Mulai"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/mulai"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:layout_marginBottom="24dp"
-                android:background="@drawable/bg_edit_text_2"
-                android:elevation="4dp"
-                android:ems="10"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_rounded"
+                android:elevation="2dp">
 
 
-                android:hint="Tahun masuk"
-                android:inputType="textPersonName"
-                android:padding="6dp"
-                android:textColor="@color/black"
-                android:textColorHint="#8e8e8e"
-                android:textSize="18sp" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mulaiLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:background="@color/white"
+                    app:boxStrokeColor="@color/bluePrimary"
+                    app:hintAnimationEnabled="true"
+                    app:startIconDrawable="@drawable/ic_baseline_calendar_month_24"
+                    app:hintEnabled="false"
+                    app:prefixTextColor="@color/bluePrimary"
+                    app:startIconTint="@color/bluePrimary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mulai"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:maxEms="4"
+                        android:textColor="@color/black">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tvSelesai"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Tahun Selesai"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginBottom="7dp"
+                android:textColor="@color/clearBlack"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
 
-
-                android:text="Selesai"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/selesai"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:elevation="4dp"
-                android:layout_marginBottom="24dp"
-                android:background="@drawable/bg_edit_text_2"
-                android:ems="10"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_rounded"
+                android:elevation="2dp">
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/selesaiLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:background="@color/white"
+                    app:boxStrokeColor="@color/bluePrimary"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="false"
+                    app:prefixTextColor="@color/bluePrimary"
+                    app:startIconDrawable="@drawable/ic_baseline_calendar_month_24"
+                    app:startIconTint="@color/bluePrimary">
 
-                android:hint="Tahun selesai"
-                android:padding="6dp"
-                android:textColor="@color/black"
-                android:textColorHint="#8e8e8e"
-                android:textSize="18sp" />
+                    <com.google.android.material.textfield.TextInputEditText
+                       android:id="@+id/selesai"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:inputType="number"
+                        android:maxEms="4"
+                        android:padding="4dp"
+                        android:textColor="@color/black">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
 
             <TextView
                 android:id="@+id/tvGelar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-
                 android:text="Gelar"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginBottom="7dp"
+                android:textColor="@color/clearBlack"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
 
-            <EditText
-                android:id="@+id/gelar"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:layout_marginBottom="24dp"
-                android:background="@drawable/bg_edit_text_2"
-                android:elevation="4dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_rounded"
+                android:elevation="2dp">
 
-                android:ems="10"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout6"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:background="@color/white"
+                    app:boxStrokeColor="@color/bluePrimary"
+                    app:endIconMode="clear_text"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="false"
+                    app:prefixTextColor="@color/bluePrimary">
 
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/gelar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:maxEms="4"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/bluePrimary">
 
-                android:hint="Gelar"
-                android:padding="6dp"
-                android:textColor="@color/black"
-                android:textColorHint="#8e8e8e"
-                android:textSize="18sp" />
+                    </com.google.android.material.textfield.TextInputEditText>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/login_card"
@@ -255,26 +308,31 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="20dp"
                 app:cardBackgroundColor="@color/bluePrimaryVariant"
                 app:cardCornerRadius="6dp"
                 app:cardElevation="6dp">
 
                 <Button
-                    android:id="@+id/btnGoUpdatePendidikan"
-                    android:layout_width="match_parent"
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/ripple_white"
+                    android:elevation="10dp"
                     android:ems="15"
-
-
+                    android:fontFamily="@font/roboto_bold"
                     android:text="Simpan"
-                    android:elevation="4dp"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
-    </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</ScrollView>

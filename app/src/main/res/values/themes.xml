@@ -19,4 +19,10 @@
         <item name="boxStrokeColor">#fff</item>
         <item name="boxStrokeWidth">2dp</item>
     </style>
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="colorAccent">@color/bluePrimary</item>
+        <item name="android:textColorPrimary">@color/black</item> <!--days of the month-->
+        <item name="android:textColorSecondary">@color/black</item>    <!--days of the week-->
+    </style>
 </resources>

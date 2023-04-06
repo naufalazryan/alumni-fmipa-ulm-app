@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#6BD2E1F6"
-    tools:context=".sosmed.UpdateSosialMediaActivity">
+    tools:context=".biodata.UpdateBiodataActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -38,9 +38,10 @@
                 android:text="Nim"
                 android:fontFamily="@font/roboto_medium"
                 android:layout_marginBottom="7dp"
-                android:textColor="@color/bluePrimary"
+                android:textColor="@color/clearBlack"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -76,12 +77,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nama Lengkap"
-                android:layout_marginBottom="7dp"
                 android:fontFamily="@font/roboto_medium"
-                android:textColor="@color/bluePrimary"
+                android:layout_marginBottom="7dp"
+                android:textColor="@color/clearBlack"
                 android:textSize="15sp"
                 android:textStyle="bold"
-            />
+                />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -122,12 +123,13 @@
                 android:id="@+id/tvJk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
                 android:text="Jenis Kelamin"
                 android:fontFamily="@font/roboto_medium"
-                android:textColor="@color/bluePrimary"
+                android:layout_marginBottom="7dp"
+                android:textColor="@color/clearBlack"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
 
             <RadioGroup
                 android:id="@+id/rgJenisKelamin"
@@ -167,12 +169,13 @@
                 android:id="@+id/tvAlamat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:fontFamily="@font/roboto_medium"
                 android:text="Alamat"
-                android:textColor="@color/bluePrimary"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginBottom="7dp"
+                android:textColor="@color/clearBlack"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -212,12 +215,13 @@
                 android:id="@+id/tvTelepon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:fontFamily="@font/roboto_medium"
                 android:text="Telepon"
-                android:textColor="@color/bluePrimary"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginBottom="7dp"
+                android:textColor="@color/clearBlack"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -262,12 +266,13 @@
                 android:id="@+id/tvEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:fontFamily="@font/roboto_medium"
                 android:text="Email"
-                android:textColor="@color/bluePrimary"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginBottom="7dp"
+                android:textColor="@color/clearBlack"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
 
             <RelativeLayout
                 android:layout_width="match_parent"

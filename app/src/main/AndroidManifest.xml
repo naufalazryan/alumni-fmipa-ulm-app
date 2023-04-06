@@ -29,14 +29,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".AddPendidikanActivity"
+            android:name=".sosmed.AddSosialMediaActivity"
             android:exported="false" />
         <activity
-            android:name=".AddPekerjaanActivity"
+            android:name=".sosmed.SosialMediaDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pendidikan.AddPendidikanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pekerjaan.AddPekerjaanActivity"
             android:exported="false" />
         <activity
             android:name=".AboutActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.About" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">

@@ -10,5 +10,7 @@
     <color name="formHint">#8e8e8e</color>
     <color name="clearColor">#E4EBF5</color>
     <color name="clearBlack">#434242</color>
+    <color name="brown">#CCA266</color>
+    <color name="red">#F84444</color>
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#fff</color>
 </resources>

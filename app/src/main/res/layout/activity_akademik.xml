@@ -38,7 +38,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="7dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Pembimbing Akademik"
+                android:text="Dosen Pembimbing Akademik"
                 android:textColor="@color/clearBlack"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -98,7 +98,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="7dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Pembimbing Utama"
+                android:text="Dosen Pembimbing Utama"
                 android:textColor="@color/clearBlack"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -130,7 +130,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="7dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Pembimbing Pendamping"
+                android:text="Dosen Pembimbing Pendamping"
                 android:textColor="@color/clearBlack"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -162,7 +162,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="7dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Penguji Utama"
+                android:text="Dosen Penguji 1"
                 android:textColor="@color/clearBlack"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -196,7 +196,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="7dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Anggota Penguji"
+                android:text="Dosen Penguji 2"
                 android:textColor="@color/clearBlack"
                 android:textSize="15sp"
                 android:textStyle="bold" />

@@ -203,11 +203,11 @@ public class BiodataActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.btnUpdate:
                 startActivity(new Intent(this, UpdateBiodataActivity.class));
-                overridePendingTransition(R.anim.slide_from_top, android.R.anim.accelerate_decelerate_interpolator);
+                overridePendingTransition(R.anim.slide_from_bottom, android.R.anim.accelerate_decelerate_interpolator);
                 break;
             case R.id.about:
                 startActivity(new Intent(this, AboutActivity.class));
-                overridePendingTransition(R.anim.slide_from_top, android.R.anim.accelerate_decelerate_interpolator);
+                overridePendingTransition(R.anim.slide_from_bottom, android.R.anim.accelerate_decelerate_interpolator);
         }
     }
 

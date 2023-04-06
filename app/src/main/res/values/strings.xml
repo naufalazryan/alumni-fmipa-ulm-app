@@ -9,6 +9,27 @@
         <item>SMP</item>
         <item>SD</item>
     </string-array>
+    <string-array name="jenisSosmed">
+        <item>WhatsApp</item>
+        <item>Instagram</item>
+        <item>Facebook</item>
+        <item>Twitter</item>
+        <item>Youtube</item>
+    </string-array>
+    <string-array name="jenisSosmed2">
+        <item>Instagram</item>
+        <item>WhatsApp</item>
+        <item>Facebook</item>
+        <item>Twitter</item>
+        <item>Youtube</item>
+    </string-array>
+    <string-array name="jenjangPendidikan2">
+        <item>SMA/SMK/MA/MAN</item>
+        <item>PASCASARJANA (S2)</item>
+        <item>DOKTOR (S3)</item>
+        <item>SMP</item>
+        <item>SD</item>
+    </string-array>
     <string-array name="pekerjaan">
         <item>PNS</item>
         <item>SWASTA</item>

@@ -5,6 +5,7 @@ import com.naufalazryan.alumnimipaulm.ModelResponse.AlumniModelResponse.AlumniRe
 import com.naufalazryan.alumnimipaulm.ModelResponse.PekerjaanModelResponse.PekerjaanDataModel;
 import com.naufalazryan.alumnimipaulm.ModelResponse.PekerjaanModelResponse.PekerjaanResponse;
 import com.naufalazryan.alumnimipaulm.ModelResponse.PendidikanModelResponse.PendidikanResponse;
+import com.naufalazryan.alumnimipaulm.ModelResponse.SosmedModelResponse.SosmedResponse;
 import com.naufalazryan.alumnimipaulm.ModelResponse.SpinnerModelResponse.DosenResponse;
 
 import okhttp3.MultipartBody;
@@ -75,6 +76,12 @@ public interface APIService {
     @Headers("key:" + Config.KEY)
     @POST("pendidikan/list")
     Call<PendidikanResponse> readPendidikan(
+            @Field("nim") String nim
+    );
+    @FormUrlEncoded
+    @Headers("key:" + Config.KEY)
+    @POST("alumni/sosmedList")
+    Call<SosmedResponse> readSosmed(
             @Field("nim") String nim
     );
 }

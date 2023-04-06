@@ -79,10 +79,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Picasso.get().load(IMAGE_URL + sessionManager.getFoto()).into(profil);
 
         List<SlideItem> sliderItems = new ArrayList<>();
-        sliderItems.add(new SlideItem(R.drawable.slide1));
-        sliderItems.add(new SlideItem(R.drawable.slide2));
         sliderItems.add(new SlideItem(R.drawable.slide3));
         sliderItems.add(new SlideItem(R.drawable.slide4));
+        sliderItems.add(new SlideItem(R.drawable.slide2));
+        sliderItems.add(new SlideItem(R.drawable.slide1));
 
         viewPager2.setAdapter(new SlideAdapter(sliderItems, viewPager2));
         viewPager2.setClipToPadding(false);

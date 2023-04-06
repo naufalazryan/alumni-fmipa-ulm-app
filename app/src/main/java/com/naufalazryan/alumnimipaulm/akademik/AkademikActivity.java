@@ -71,7 +71,7 @@ public class AkademikActivity extends AppCompatActivity implements View.OnClickL
         switch (view.getId()) {
             case R.id.btnUpdate:
                 startActivity(new Intent(this, UpdateAkademikActivity.class));
-                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                overridePendingTransition(R.anim.slide_from_bottom, android.R.anim.accelerate_decelerate_interpolator);
                 break;
             case R.id.arrow_back:
                 startActivity(new Intent(this, MainActivity.class));
