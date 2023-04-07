@@ -65,7 +65,6 @@ public class BiodataActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void view(){
-        sessionManager = new SessionManager(BiodataActivity.this);
 
         gantiProfil = findViewById(R.id.gantiProfil);
         profil = findViewById(R.id.bioGambar);
@@ -86,6 +85,8 @@ public class BiodataActivity extends AppCompatActivity implements View.OnClickLi
 
         TextView activity = findViewById(R.id.activity);
         activity.setText("Biodata");
+
+        sessionManager = new SessionManager(BiodataActivity.this);
 
         aluNim = sessionManager.getUserDetail().get(SessionManager.ALU_NIM);
         nama = sessionManager.getUserDetail().get(SessionManager.ALU_NAMA);
