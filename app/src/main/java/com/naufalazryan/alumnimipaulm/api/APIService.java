@@ -2,7 +2,6 @@ package com.naufalazryan.alumnimipaulm.api;
 
 import com.naufalazryan.alumnimipaulm.Config;
 import com.naufalazryan.alumnimipaulm.ModelResponse.AlumniModelResponse.AlumniResponse;
-import com.naufalazryan.alumnimipaulm.ModelResponse.PekerjaanModelResponse.PekerjaanDataModel;
 import com.naufalazryan.alumnimipaulm.ModelResponse.PekerjaanModelResponse.PekerjaanResponse;
 import com.naufalazryan.alumnimipaulm.ModelResponse.PendidikanModelResponse.PendidikanResponse;
 import com.naufalazryan.alumnimipaulm.ModelResponse.SosmedModelResponse.SosmedResponse;

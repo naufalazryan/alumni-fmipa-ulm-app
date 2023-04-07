@@ -2,6 +2,7 @@ package com.naufalazryan.alumnimipaulm.biodata;
 
 import static com.naufalazryan.alumnimipaulm.Config.IMAGE_URL;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -64,6 +65,7 @@ public class BiodataActivity extends AppCompatActivity implements View.OnClickLi
         view();
     }
 
+    @SuppressLint("SetTextI18n")
     private void view(){
 
         gantiProfil = findViewById(R.id.gantiProfil);
@@ -109,9 +111,7 @@ public class BiodataActivity extends AppCompatActivity implements View.OnClickLi
 
         Picasso.get().load(IMAGE_URL + sessionManager.getFoto()).into(profil);
 
-        gantiProfil.setOnClickListener(v ->{
-            selectImage();
-        });
+        gantiProfil.setOnClickListener(v -> selectImage());
     }
 
     private void selectImage() {
