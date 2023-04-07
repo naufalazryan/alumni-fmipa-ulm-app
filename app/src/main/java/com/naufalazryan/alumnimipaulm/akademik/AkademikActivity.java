@@ -32,9 +32,6 @@ public class AkademikActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void view() {
-        sessionManager = new SessionManager(AkademikActivity.this);
-
-
         tvJudulSkripsi = findViewById(R.id.judulSkripsi);
         tvAluDosenPa = findViewById(R.id.pembimbingAkademik);
         tvAluDosenPu = findViewById(R.id.pembimbingUtama);
@@ -42,6 +39,7 @@ public class AkademikActivity extends AppCompatActivity implements View.OnClickL
         tvAluDosenPg1 = findViewById(R.id.pengujiUtama);
         tvAluDosenPg2 = findViewById(R.id.anggotaPenguji);
 
+        sessionManager = new SessionManager(AkademikActivity.this);
 
         judulSkripsi = sessionManager.getUserDetail().get(SessionManager.ALU_JUDUL_SKRIPSI);
         aluDosenPa = sessionManager.getUserDetail().get(SessionManager.ALU_DSN_PA_NAMA);
