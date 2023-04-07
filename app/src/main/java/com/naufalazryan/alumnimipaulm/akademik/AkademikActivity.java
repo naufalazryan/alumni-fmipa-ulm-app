@@ -31,6 +31,7 @@ public class AkademikActivity extends AppCompatActivity implements View.OnClickL
         view();
     }
 
+    @SuppressLint("SetTextI18n")
     private void view() {
         tvJudulSkripsi = findViewById(R.id.judulSkripsi);
         tvAluDosenPa = findViewById(R.id.pembimbingAkademik);
