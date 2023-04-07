@@ -113,7 +113,7 @@ public class UpdateAkademikActivity extends AppCompatActivity implements View.On
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String getNamaDosen = adapterView.getItemAtPosition(i).toString();
-
+                Toast.makeText(context, "Pilih Dosen " + getNamaDosen, Toast.LENGTH_SHORT).show();
             }
 
             @Override
