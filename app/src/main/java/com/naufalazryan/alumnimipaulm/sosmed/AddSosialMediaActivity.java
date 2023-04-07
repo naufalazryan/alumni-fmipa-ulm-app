@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.naufalazryan.alumnimipaulm.AboutActivity;
 import com.naufalazryan.alumnimipaulm.R;
@@ -23,6 +24,12 @@ public class AddSosialMediaActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_sosial_media);
         sosmed = findViewById(R.id.jenisSosmed);
+
+        findViewById(R.id.arrow_back).setOnClickListener(this);
+        findViewById(R.id.about).setOnClickListener(this);
+
+        TextView activity = findViewById(R.id.activity);
+        activity.setText("Tambah Sosial Media");
 
         ArrayAdapter<String> spinnerJenisSosmed = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
                 getResources().getStringArray(R.array.jenisSosmed));
