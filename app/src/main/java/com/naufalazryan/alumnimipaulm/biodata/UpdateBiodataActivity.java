@@ -1,49 +1,30 @@
 package com.naufalazryan.alumnimipaulm.biodata;
 
 
-import static com.naufalazryan.alumnimipaulm.Config.IMAGE_URL;
-
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.loader.content.CursorLoader;
 
 import com.naufalazryan.alumnimipaulm.AboutActivity;
-import com.naufalazryan.alumnimipaulm.MainActivity;
+import com.naufalazryan.alumnimipaulm.ModelResponse.AlumniModelResponse.AlumniResponse;
 import com.naufalazryan.alumnimipaulm.R;
 import com.naufalazryan.alumnimipaulm.SessionManager;
 import com.naufalazryan.alumnimipaulm.api.APIService;
 import com.naufalazryan.alumnimipaulm.api.RetrofitClient;
-import com.naufalazryan.alumnimipaulm.ModelResponse.AlumniModelResponse.AlumniResponse;
-import com.squareup.picasso.Picasso;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-
-import de.hdodenhof.circleimageview.CircleImageView;
-
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -77,6 +58,7 @@ public class UpdateBiodataActivity extends AppCompatActivity implements View.OnC
         view();
     }
 
+    @SuppressLint("SetTextI18n")
     private void view() {
 
         findViewById(R.id.arrow_back).setOnClickListener(this);
@@ -84,7 +66,6 @@ public class UpdateBiodataActivity extends AppCompatActivity implements View.OnC
         activity.setText("Update Biodata");
 
 
-        sessionManager = new SessionManager(UpdateBiodataActivity.this);
 
         btnUpdate = findViewById(R.id.btnUpdate);
         tvMhsNim = findViewById(R.id.nim);
@@ -96,6 +77,8 @@ public class UpdateBiodataActivity extends AppCompatActivity implements View.OnC
         perempuan = findViewById(R.id.rbPerempuan);
         rgJK = findViewById(R.id.rgJenisKelamin);
 
+
+        sessionManager = new SessionManager(UpdateBiodataActivity.this);
 
         upNim = sessionManager.getUserDetail().get(SessionManager.ALU_NIM);
         upNama = sessionManager.getUserDetail().get(SessionManager.ALU_NAMA);
@@ -120,57 +103,55 @@ public class UpdateBiodataActivity extends AppCompatActivity implements View.OnC
 
 
         pd = new ProgressDialog(this);
-        btnUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pd.setMessage("Update...");
-                pd.setCancelable(false);
-                pd.show();
+        btnUpdate.setOnClickListener(view -> {
+            pd.setMessage("Update...");
+            pd.setCancelable(false);
+            pd.show();
 
-                String selectedRbText = "L";
+            String selectedRbText = "L";
 
-                int selectedRadioButtonId = rgJK.getCheckedRadioButtonId();
-                if (selectedRadioButtonId != -1) {
-                    selected = findViewById(selectedRadioButtonId);
-                    selectedRbText = selected.getText().toString();
-                    selectedRbText = (selectedRbText.equalsIgnoreCase("Perempuan") ? "P" : "L");
+            int selectedRadioButtonId = rgJK.getCheckedRadioButtonId();
+            if (selectedRadioButtonId != -1) {
+                selected = findViewById(selectedRadioButtonId);
+                selectedRbText = selected.getText().toString();
+                selectedRbText = (selectedRbText.equalsIgnoreCase("Perempuan") ? "P" : "L");
 
-                }
-                Log.d("Retro", selectedRbText);
-                Call<AlumniResponse> update = apiService.updateBiodata(
-                        upNim.toString(),
-                        edMhsNama.getText().toString(),
-                        edMhsAlamat.getText().toString(),
-                        selectedRbText,
-                        edMhsHp.getText().toString(),
-                        edMhsEmail.getText().toString());
-
-                update.enqueue(new Callback<AlumniResponse>() {
-                    @Override
-                    public void onResponse(Call<AlumniResponse> call, Response<AlumniResponse> response) {
-//                         Log.d("Retro", "Response "+response.body().getData().getAluJK());
-                        sessionManager.setAluNama(response.body().getData().getAluNama());
-                        sessionManager.setAluJk(response.body().getData().getAluJK());
-                        sessionManager.setAluAlamat(response.body().getData().getAluAlamat());
-                        sessionManager.setAluHp(response.body().getData().getAluHp());
-                        sessionManager.setAluEmail(response.body().getData().getAluEmail());
-                        Toast.makeText(UpdateBiodataActivity.this, response.body().getMsg(), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(UpdateBiodataActivity.this, BiodataActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-
-                    @Override
-                    public void onFailure(Call<AlumniResponse> call, Throwable t) {
-                        pd.hide();
-                        Log.d("Retro", "On Failure");
-                    }
-                });
             }
+            Log.d("Retro", selectedRbText);
+            Call<AlumniResponse> update = apiService.updateBiodata(
+                    upNim,
+                    edMhsNama.getText().toString(),
+                    edMhsAlamat.getText().toString(),
+                    selectedRbText,
+                    edMhsHp.getText().toString(),
+                    edMhsEmail.getText().toString());
+
+            update.enqueue(new Callback<AlumniResponse>() {
+                @Override
+                public void onResponse(@NonNull Call<AlumniResponse> call, @NonNull Response<AlumniResponse> response) {
+//                         Log.d("Retro", "Response "+response.body().getData().getAluJK());
+                    sessionManager.setAluNama(response.body().getData().getAluNama());
+                    sessionManager.setAluJk(response.body().getData().getAluJK());
+                    sessionManager.setAluAlamat(response.body().getData().getAluAlamat());
+                    sessionManager.setAluHp(response.body().getData().getAluHp());
+                    sessionManager.setAluEmail(response.body().getData().getAluEmail());
+                    Toast.makeText(UpdateBiodataActivity.this, response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(UpdateBiodataActivity.this, BiodataActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+
+                @Override
+                public void onFailure(@NonNull Call<AlumniResponse> call, @NonNull Throwable t) {
+                    pd.hide();
+                    Log.d("Retro", "On Failure");
+                }
+            });
         });
     }
 
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -184,9 +165,7 @@ public class UpdateBiodataActivity extends AppCompatActivity implements View.OnC
                     overridePendingTransition(R.anim.slide_from_top, android.R.anim.accelerate_decelerate_interpolator);
                 }
                 ));
-                builder.setNegativeButton("Tidak", (dialogInterface, i) -> {
-                    dialogInterface.dismiss();
-                });
+                builder.setNegativeButton("Tidak", (dialogInterface, i) -> dialogInterface.dismiss());
                 builder.show();
             case R.id.about:
                 startActivity(new Intent(this, AboutActivity.class));
@@ -205,9 +184,7 @@ public class UpdateBiodataActivity extends AppCompatActivity implements View.OnC
             overridePendingTransition(R.anim.slide_from_top, android.R.anim.accelerate_decelerate_interpolator);
         }
         ));
-        builder.setNegativeButton("Tidak", (dialogInterface, i) -> {
-            dialogInterface.dismiss();
-        });
+        builder.setNegativeButton("Tidak", (dialogInterface, i) -> dialogInterface.dismiss());
         builder.show();
     }
 }
