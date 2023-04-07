@@ -41,6 +41,8 @@ public class UpdateAkademikActivity extends AppCompatActivity implements View.On
 
     EditText edAluSkripsi, edAluDsnPuLain, edAluDsnPpLain, edAluDsnPg1Lain, edAluDsnPg2Lain;
     SessionManager sessionManager;
+    ProgressDialog loading;
+    Button btnUpdate;
     String upAluSkripsi, upAluNim, upAluDsnPuLain, upAluDsnPpLain, upAluDSnPg1Lain, upAluDsnPg2Lain;
     @BindView(R.id.dosenPA)
     Spinner listDosen;
@@ -54,8 +56,7 @@ public class UpdateAkademikActivity extends AppCompatActivity implements View.On
     Spinner listDosen5;
     Context context;
     APIService apiService;
-    ProgressDialog loading;
-    Button btnUpdate;
+
 
     List<String> listSpinnerDosen = new ArrayList<>();
     List<String> listSpinnerDosenNip = new ArrayList<>();
