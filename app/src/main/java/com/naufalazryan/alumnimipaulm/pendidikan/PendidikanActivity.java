@@ -49,43 +49,43 @@ public class PendidikanActivity extends AppCompatActivity implements View.OnClic
 
     }
 
-    private void view() {
-        sessionManager = new SessionManager(this);
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(layoutManager);
-        apiService = RetrofitClient.getClient().create(APIService.class);
-        nim = sessionManager.getUserDetail().get(SessionManager.ALU_NIM);
-        pendidikanActivity = this;
-        refresh();
+        private void view() {
+            sessionManager = new SessionManager(this);
+            layoutManager = new LinearLayoutManager(this);
+            recyclerView = findViewById(R.id.recyclerView);
+            recyclerView.setLayoutManager(layoutManager);
+            apiService = RetrofitClient.getClient().create(APIService.class);
+            nim = sessionManager.getUserDetail().get(SessionManager.ALU_NIM);
+            pendidikanActivity = this;
+            refresh();
 
-        findViewById(R.id.arrow_back).setOnClickListener(this);
-        findViewById(R.id.about).setOnClickListener(this);
-        findViewById(R.id.btnTambah).setOnClickListener(this);
+            findViewById(R.id.arrow_back).setOnClickListener(this);
+            findViewById(R.id.about).setOnClickListener(this);
+            findViewById(R.id.btnTambah).setOnClickListener(this);
 
-        TextView activity = findViewById(R.id.activity);
-        activity.setText("Pendidikan");
+            TextView activity = findViewById(R.id.activity);
+            activity.setText("Pendidikan");
 
-    }
+        }
 
-    private void refresh() {
-        Call<PendidikanResponse> pendidikan = apiService.readPendidikan(nim);
-        Log.d("response",nim);
-        pendidikan.enqueue(new Callback<PendidikanResponse>() {
-            @Override
-            public void onResponse(Call<PendidikanResponse> call, Response<PendidikanResponse> response) {
-                List<PendidikanDataModel> pendidikanDataModel = response.body().getData();
-                Log.d("response",pendidikanDataModel.toString());
-                adapter = new PendidikanAdapter(pendidikanDataModel);
-                recyclerView.setAdapter(adapter);
-            }
+        private void refresh() {
+            Call<PendidikanResponse> pendidikan = apiService.readPendidikan(nim);
+            Log.d("response",nim);
+            pendidikan.enqueue(new Callback<PendidikanResponse>() {
+                @Override
+                public void onResponse(Call<PendidikanResponse> call, Response<PendidikanResponse> response) {
+                    List<PendidikanDataModel> pendidikanDataModel = response.body().getData();
+                    Log.d("response",pendidikanDataModel.toString());
+                    adapter = new PendidikanAdapter(pendidikanDataModel);
+                    recyclerView.setAdapter(adapter);
+                }
 
-            @Override
-            public void onFailure(Call<PendidikanResponse> call, Throwable t) {
-                Log.d("Retrofit Get", t.toString());
-            }
-        });
-    }
+                @Override
+                public void onFailure(Call<PendidikanResponse> call, Throwable t) {
+                    Log.d("Retrofit Get", t.toString());
+                }
+            });
+        }
 
     @Override
     public void onClick(View view) {

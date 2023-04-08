@@ -50,6 +50,11 @@ public class UpdatePekerjaanActivity extends AppCompatActivity implements View.O
         edEmailAtasan = findViewById(R.id.emailAtasan);
         edHpAtasan = findViewById(R.id.hpAtasan);
 
+        findViewById(R.id.arrow_back).setOnClickListener(this);
+        findViewById(R.id.about).setOnClickListener(this);
+        TextView activity = findViewById(R.id.activity);
+        activity.setText("Update Pekerjaan");
+
         intent = getIntent();
         edPekerjaan.setText(intent.getStringExtra("kjPekerjaan"));
         edInstansi.setText(intent.getStringExtra("kjInstansi"));
@@ -57,11 +62,6 @@ public class UpdatePekerjaanActivity extends AppCompatActivity implements View.O
         edNamaAtasan.setText(intent.getStringExtra("kjNamaAtasan"));
         edEmailAtasan.setText(intent.getStringExtra("kjEmailAtasan"));
         edHpAtasan.setText(intent.getStringExtra("kjHpAtasan"));
-
-        findViewById(R.id.arrow_back).setOnClickListener(this);
-        findViewById(R.id.about).setOnClickListener(this);
-        TextView activity = findViewById(R.id.activity);
-        activity.setText("Update Pekerjaan");
 
         ArrayAdapter<String> spinnerPekerjaan = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
                 getResources().getStringArray(R.array.pekerjaan));
@@ -74,8 +74,6 @@ public class UpdatePekerjaanActivity extends AppCompatActivity implements View.O
         ArrayAdapter<String> spinnerPenghasilan = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
                 getResources().getStringArray(R.array.penghasilan));
         penghasilan.setAdapter(spinnerPenghasilan);
-
-
     }
 
     @Override

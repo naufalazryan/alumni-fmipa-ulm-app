@@ -54,19 +54,10 @@ public class UpdatePendidikanActivity extends AppCompatActivity implements View.
         findViewById(R.id.arrow_back).setOnClickListener(this);
         findViewById(R.id.about).setOnClickListener(this);
 
-        ArrayAdapter<String> spinnerJenjang = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
-                getResources().getStringArray(R.array.jenjangPendidikan2));
-        jenjang.setAdapter(spinnerJenjang);
-
         TextView activity = findViewById(R.id.activity);
         activity.setText("Update Pendidikan");
 
-        intent = getIntent();
-        edMulai.setText(intent.getStringExtra("PendMulai"));
-        edSelesai.setText(intent.getStringExtra("PendSelesai"));
-        edNamaPt.setText(intent.getStringExtra("PendPT"));
-        edJurusan.setText(intent.getStringExtra("PendJurusan"));
-        edGelar.setText(intent.getStringExtra("pendGelar"));
+
 
 
     }

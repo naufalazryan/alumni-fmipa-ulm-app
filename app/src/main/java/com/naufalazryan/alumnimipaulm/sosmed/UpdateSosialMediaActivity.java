@@ -52,12 +52,12 @@ public class UpdateSosialMediaActivity extends AppCompatActivity implements View
         findViewById(R.id.about).setOnClickListener(this);
         sosmed = findViewById(R.id.jenisSosmed);
 
+        TextView activity = findViewById(R.id.activity);
+        activity.setText("Update Sosial Media");
+
         ArrayAdapter<String> spinnerJenisSosmed = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
                 getResources().getStringArray(R.array.jenisSosmed2));
         sosmed.setAdapter(spinnerJenisSosmed);
-
-        TextView activity = findViewById(R.id.activity);
-        activity.setText("Update Sosial Media");
 
         intent = getIntent();
         edUrl.setText(intent.getStringExtra("URL"));
